@@ -67,7 +67,7 @@ describe('DataPipes', () => {
         expect(mockCallback).toHaveBeenCalledTimes(1);
 
         // Assert that the callback was called with the correct argument
-        expect(mockCallback).toHaveBeenCalledWith(["init"]);
+        expect(mockCallback).toHaveBeenCalledWith(["",""]);
     });
 
     it('should not invoke the callback', () => {
@@ -103,7 +103,7 @@ describe('DataPipes', () => {
 
         // Assert the event's detail payload
         const event = mockListener.mock.calls[0][0] as CustomEvent;
-        expect(event.detail).toEqual(["init"]);
+        expect(event.detail).toEqual(["",""]);
     });    
 
     it('should not dispatch a custom event', () => {
@@ -121,6 +121,46 @@ describe('DataPipes', () => {
         expect(mockListener).toHaveBeenCalledTimes(0);
 
     });    
+
+    it('should dispatch a custom event upon pointer upt', () => {
+
+        // Mock the event listener
+        const mockListener = jest.fn();
+
+        // Attach the mock listener to the element
+        container.addEventListener('testEvent', mockListener);
+
+        // Call the tested function
+        const dp = new DataPipes(container, 2000, 2000,"testEvent");
+
+        // Retrieve the wrapper created by the module
+        const wrapper = dp.getWrapper();
+
+
+        // Simulate a pointerdown event
+        const pEvent = new PointerEvent('pointerup', {
+            bubbles: false,
+            cancelable: true,
+            pointerId: 1,
+        });
+        wrapper.dispatchEvent(pEvent);
+
+        // Assert that the listener was called twice (1. for init)
+        expect(mockListener).toHaveBeenCalledTimes(2);
+
+        // Assert that the listener was called with the correct event
+        expect(mockListener.mock.calls[0][0]).toBeInstanceOf(CustomEvent);
+        // Assert that the listener was called with the correct event
+        expect(mockListener.mock.calls[1][0]).toBeInstanceOf(CustomEvent);
+
+        // Assert the event's detail payload
+        const event1 = mockListener.mock.calls[0][0] as CustomEvent;
+        expect(event1.detail).toEqual(["",""]);
+        const event2 = mockListener.mock.calls[1][0] as CustomEvent;
+        expect(event2.detail).toEqual(["",""]);
+    });    
+
+
 
 
 })
