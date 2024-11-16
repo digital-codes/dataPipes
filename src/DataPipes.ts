@@ -65,14 +65,12 @@ class DataPipes {
         this.context = context;
 
         if (typeof callBack === "function") {
-            console.log('callback is function');
+            //console.log('callback is function');
             this.callBack = callBack;
         } else if (typeof callBack === "string") {
-            console.log('callback is string');
+            //console.log('callback is string');
             this.callBack = (result: string[]) => {
-                console.log('dispatching event', callBack, result);
                 const event = new CustomEvent(callBack, { detail: result });
-                console.log("dispatching event", event);
                 this.container.dispatchEvent(event);
             };
         } else {
