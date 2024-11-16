@@ -40,17 +40,18 @@ class DataPipes {
     private activeColor = "yellow";
     private borderWidth = 2;
     private edgeWidth = 3;
+    private callBack: ((result: string[]) => void) | null;
 
 
     private viewport = { scale: 1, translateX: 0, translateY: 0 };
 
-    constructor(container: HTMLElement, width: number, height: number) {
+    constructor(container: HTMLElement, width: number, height: number, callBack: ((result: string[]) => void) | string | null = null) {
         this.container = container;
         this.wrapper = document.createElement("div");
         this.wrapper.style.position = "relative";
-        this.wrapper.style.width = `${width}px`//"100%";
-        this.wrapper.style.height = `${height}px`//"100%";
-        this.wrapper.style.overflow = "visible"; // hidden in container
+        this.wrapper.style.width = `${width}px`;
+        this.wrapper.style.height = `${height}px`;
+        this.wrapper.style.overflow = "visible";
         this.wrapper.style.transformOrigin = "0 0";
         this.canvas = document.createElement("canvas");
         this.canvas.width = width;
@@ -63,8 +64,26 @@ class DataPipes {
         if (!context) throw new Error("Canvas context could not be initialized");
         this.context = context;
 
+        if (typeof callBack === "function") {
+            console.log('callback is function');
+            this.callBack = callBack;
+        } else if (typeof callBack === "string") {
+            console.log('callback is string');
+            this.callBack = (result: string[]) => {
+                console.log('dispatching event', callBack, result);
+                const event = new CustomEvent(callBack, { detail: result });
+                console.log("dispatching event", event);
+                this.container.dispatchEvent(event);
+            };
+        } else {
+            this.callBack = null
+        }
+
         this.addEventListeners();
         this.render();
+        if (this.callBack) {
+            this.callBack(['init']);
+        }
     }
 
     addNode(config: NodeConfig): string {
@@ -74,7 +93,7 @@ class DataPipes {
         config.selected = config.selected || false;
         config.active = config.active || false;
         this.nodes.push(config);
-        console.log("nodes:", this.nodes);
+        //console.log("nodes:", this.nodes);
         this.render();
         return id
     }
@@ -87,7 +106,7 @@ class DataPipes {
         const label = config.label || `edge-${this.edgeIdx}`;
         config.label = label;
         this.edges.push(config);
-        console.log("edges:", this.edges);
+        //console.log("edges:", this.edges);
         this.render();
         return id
     }
@@ -146,9 +165,9 @@ class DataPipes {
         // Reset to 0,0
         const wwidth = window.innerWidth;
         const wheight = window.innerHeight;
-        console.log('window size', wwidth, wheight);
+        //console.log('window size', wwidth, wheight);
         const { width: containerWidth, height: containerHeight } = this.getContainerSize();
-        console.log('container size 1', containerWidth, containerHeight);
+        //console.log('container size 1', containerWidth, containerHeight);
         this.viewport.translateX = 0;
         this.viewport.translateY = 0;
         // this.viewport.scale = 1;
@@ -185,7 +204,7 @@ class DataPipes {
     }
 
     private updateViewport(): void {
-        console.log('rendering', this.canvas.width, this.canvas.height, this.viewport.scale, this.viewport.translateX, this.viewport.translateY);
+        //console.log('rendering', this.canvas.width, this.canvas.height, this.viewport.scale, this.viewport.translateX, this.viewport.translateY);
         this.wrapper.style.transform = `
             translate(${this.viewport.translateX}px, ${this.viewport.translateY}px)
             scale(${this.viewport.scale})
@@ -198,7 +217,7 @@ class DataPipes {
         this.clearContainer(); // Ensure no leftover graphics
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
 
-        console.log('rendering', this.canvas.width, this.canvas.height, this.viewport.scale, this.viewport.translateX, this.viewport.translateY);
+        //console.log('rendering', this.canvas.width, this.canvas.height, this.viewport.scale, this.viewport.translateX, this.viewport.translateY);
 
         // Draw edges
         for (const edge of this.edges) {
@@ -323,7 +342,7 @@ class DataPipes {
         let isDragging = false; // Track if a node is being dragged
 
         this.wrapper.addEventListener("pointerdown", (event) => {
-            console.log('pointerdown');
+            //console.log('pointerdown');
             const { offsetX, offsetY } = event;
             isDragging = false;
             //this.selectedNode = null;
@@ -334,7 +353,7 @@ class DataPipes {
                     offsetY >= this.selectedNode.y &&
                     offsetY <= this.selectedNode.y + this.selectedNode.size
                 )) {
-                    console.log('unselect the node', this.selectedNode.id);
+                    //console.log('unselect the node', this.selectedNode.id);
                     this.selectedNode.selected = false;
                     this.selectedNode = null;
                 }
@@ -342,7 +361,7 @@ class DataPipes {
 
             // Check if a node was clicked for dragging or selection
             for (const node of this.nodes) {
-                console.log('checking node', node.id);
+                //console.log('checking node', node.id);
                 if (
                     offsetX >= node.x &&
                     offsetX <= node.x + node.size &&
@@ -351,16 +370,16 @@ class DataPipes {
                 ) {
                     // unselect any edge
                     if (this.selectedEdge) {
-                        console.log('unselect the edge', this.selectedEdge.id);
+                        //console.log('unselect the edge', this.selectedEdge.id);
                         this.selectedEdge.selected = false;
                         this.selectedEdge = null;
                     }
                     // check current selected node
                     const currentNode = this.nodes.find(node => node.id === this.selectedNode?.id);
                     if (currentNode && currentNode.id !== node.id) {
-                        console.log('unselect the node', currentNode.id);
+                        //console.log('unselect the node', currentNode.id);
                         currentNode.selected = false;
-                        console.log('unselect the node', node.id);
+                        //console.log('unselect the node', node.id);
                         this.selectedNode = null;
                     }
                     // Select the node
@@ -369,11 +388,9 @@ class DataPipes {
                     this.offsetX = offsetX - node.x;
                     this.offsetY = offsetY - node.y;
                     isDragging = true; // Prepare for dragging
-                    console.log('selecting node', node.id);
+                    //console.log('selecting node', node.id);
                     this.render();
                     return;
-                } else {
-                    console.log('not in ', node.id);
                 }
             }
 
