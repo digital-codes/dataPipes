@@ -67,7 +67,7 @@ describe('DataPipes', () => {
         expect(mockCallback).toHaveBeenCalledTimes(1);
 
         // Assert that the callback was called with the correct argument
-        expect(mockCallback).toHaveBeenCalledWith(["",""]);
+        expect(mockCallback).toHaveBeenCalledWith({state:"init"});
     });
 
     it('should not invoke the callback', () => {
@@ -103,7 +103,7 @@ describe('DataPipes', () => {
 
         // Assert the event's detail payload
         const event = mockListener.mock.calls[0][0] as CustomEvent;
-        expect(event.detail).toEqual(["",""]);
+        expect(event.detail).toEqual({state:"init"});
     });    
 
     it('should not dispatch a custom event', () => {
@@ -155,9 +155,9 @@ describe('DataPipes', () => {
 
         // Assert the event's detail payload
         const event1 = mockListener.mock.calls[0][0] as CustomEvent;
-        expect(event1.detail).toEqual(["",""]);
+        expect(event1.detail).toEqual({state:"init"});
         const event2 = mockListener.mock.calls[1][0] as CustomEvent;
-        expect(event2.detail).toEqual(["",""]);
+        expect(event2.detail).toEqual({state:"up",node:"",edge:""});
     });    
 
 

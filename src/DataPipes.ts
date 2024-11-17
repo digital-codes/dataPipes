@@ -40,12 +40,12 @@ class DataPipes {
     private activeColor = "yellow";
     private borderWidth = 2;
     private edgeWidth = 3;
-    private callBack: ((result: string[]) => void);
+    private callBack: ((result: { [key: string]: any }) => void);
 
 
     private viewport = { scale: 1, translateX: 0, translateY: 0 };
 
-    constructor(container: HTMLElement, width: number, height: number, callBack: ((result: string[]) => void) | string | null = null) {
+    constructor(container: HTMLElement, width: number, height: number, callBack: ((result: { [key: string]: any }) => void) | string | null = null) {
         this.container = container;
         this.wrapper = document.createElement("div");
         this.wrapper.style.position = "relative";
@@ -69,17 +69,17 @@ class DataPipes {
             this.callBack = callBack;
         } else if (typeof callBack === "string") {
             //console.log('callback is string');
-            this.callBack = (result: string[]) => {
+            this.callBack = (result: { [key: string]: any }) => {
                 const event = new CustomEvent(callBack, { detail: result });
                 this.container.dispatchEvent(event);
             };
         } else {
-            this.callBack = (x:string[]) => {} // empty function. don't need to check for null later on
+            this.callBack = (x:{ [key: string]: any }) => {} // empty function. don't need to check for null later on
         }
 
         this.addEventListeners();
         this.render();
-        this.callBack(['','']);
+        this.callBack({state:"init"});
     }
 
     // needed for testing pointer events
@@ -445,7 +445,7 @@ class DataPipes {
             isDragging = false; // Stop dragging
             const nid = this.selectedNode ? this.selectedNode.id as string : '';
             const eid = this.selectedEdge ? this.selectedEdge.id as string : '';
-            this.callBack([nid, eid]);
+            this.callBack({state:"up",node:nid, edge:eid});
         });
 
         this.wrapper.addEventListener("pointercancel", () => {

@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[DataPipes.ts:7](https://github.com/digital-codes/dataPipes/blob/8a12a403330cbb983f44e823368f767bb7b26bfd/src/DataPipes.ts#L7)
+[DataPipes.ts:7](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L7)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[DataPipes.ts:10](https://github.com/digital-codes/dataPipes/blob/8a12a403330cbb983f44e823368f767bb7b26bfd/src/DataPipes.ts#L10)
+[DataPipes.ts:10](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L10)
 
 ***
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[DataPipes.ts:2](https://github.com/digital-codes/dataPipes/blob/8a12a403330cbb983f44e823368f767bb7b26bfd/src/DataPipes.ts#L2)
+[DataPipes.ts:2](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L2)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[DataPipes.ts:9](https://github.com/digital-codes/dataPipes/blob/8a12a403330cbb983f44e823368f767bb7b26bfd/src/DataPipes.ts#L9)
+[DataPipes.ts:9](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L9)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[DataPipes.ts:6](https://github.com/digital-codes/dataPipes/blob/8a12a403330cbb983f44e823368f767bb7b26bfd/src/DataPipes.ts#L6)
+[DataPipes.ts:6](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L6)
 
 ***
 
@@ -64,7 +64,7 @@
 
 #### Defined in
 
-[DataPipes.ts:8](https://github.com/digital-codes/dataPipes/blob/8a12a403330cbb983f44e823368f767bb7b26bfd/src/DataPipes.ts#L8)
+[DataPipes.ts:8](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L8)
 
 ***
 
@@ -74,7 +74,7 @@
 
 #### Defined in
 
-[DataPipes.ts:5](https://github.com/digital-codes/dataPipes/blob/8a12a403330cbb983f44e823368f767bb7b26bfd/src/DataPipes.ts#L5)
+[DataPipes.ts:5](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L5)
 
 ***
 
@@ -84,7 +84,7 @@
 
 #### Defined in
 
-[DataPipes.ts:3](https://github.com/digital-codes/dataPipes/blob/8a12a403330cbb983f44e823368f767bb7b26bfd/src/DataPipes.ts#L3)
+[DataPipes.ts:3](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L3)
 
 ***
 
@@ -94,4 +94,4 @@
 
 #### Defined in
 
-[DataPipes.ts:4](https://github.com/digital-codes/dataPipes/blob/8a12a403330cbb983f44e823368f767bb7b26bfd/src/DataPipes.ts#L4)
+[DataPipes.ts:4](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L4)
