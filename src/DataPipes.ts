@@ -213,7 +213,7 @@ class DataPipes {
         this.clearContainer();
     }
 
-    private render(): void {
+    private async render (): Promise <void> {
 
         this.clearContainer(); // Ensure no leftover graphics
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
@@ -311,6 +311,16 @@ class DataPipes {
                 // Default to square
                 this.context.fillRect(node.x, node.y, node.size, node.size);
                 this.context.strokeRect(node.x, node.y, node.size, node.size);
+            }
+
+            // node icon, if exists
+            if (node.icon) {
+                const img = new Image();
+                img.src = node.icon;
+                await img.decode(); // Ensure the image is fully loaded before drawing
+                const imgSize = Math.round(node.size * .8);
+                const imgOffs = Math.ceil((node.size - imgSize) / 2);
+                this.context.drawImage(img, node.x + imgOffs, node.y + imgOffs, imgSize,imgSize);
             }
 
             // Draw node label
