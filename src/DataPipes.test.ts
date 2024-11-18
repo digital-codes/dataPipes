@@ -46,10 +46,14 @@ describe('DataPipes', () => {
         const nodes = dp.getNodes();
         expect(Array.isArray(nodes)).toBe(true);
         const xnodes = [
-            { x: 100, y: 100, size: 50, label: 'Node 1' ,active:false,selected:false,id:"node-1" },
-            { x: 100, y: 100, size: 10, label: 'Node 2' ,active:false,selected:false,id:"node-2" }
+            { x: 100, y: 100, size: 50, label: 'Node 1', selected:false,id:"N-1",
+                "bgColor": "white", "borderColor": "red", "shape": "circle",
+             },
+            { x: 100, y: 100, size: 10, label: 'Node 2', selected:false,id:"N-2",
+                "bgColor": "white", "borderColor": "red", "shape": "circle",
+             }
         ]
-        const xedges = [ {id:"edge-1",from:"node-1",to:"node-2",selected:false,label:"edge-1"}]
+        const xedges = [ {id:"E-1",from:"N-1",to:"N-2",selected:false,label:"E-1"}]
         expect(nodes).toEqual(xnodes);
         const edges = dp.getEdges();
         expect(Array.isArray(edges)).toBe(true);
