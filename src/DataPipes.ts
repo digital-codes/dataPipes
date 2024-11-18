@@ -1,13 +1,15 @@
+
 interface NodeConfig {
     id?: string;
     x: number;
     y: number;
     size: number;
-    selected?: boolean;
-    active?: boolean;
+    borderColor?: string; 
+    bgColor?: string;
     shape?: "square" | "circle" | "star"; // New shape options,
-    label?: string; // New property for node labels
     icon?: string; // New property for node icons
+    label?: string; // New property for node labels
+    selected?: boolean;
 }
 
 interface EdgeConfig {
@@ -33,14 +35,17 @@ class DataPipes {
     private offsetY: number = 0;
     private nodeIdx: number = 0;    // increases only with addnode
     private edgeIdx: number = 0;    // increases only with addedge
+    // callback function
+    private callBack: ((result: { [key: string]: any }) => void);
+    // default values
+    private nodeSize: number = 60;
     private textSize = 16;
     private textColor = "black";
     private borderColor = "red"
     private bgColor = "white";
-    private activeColor = "yellow";
+    private selectColor = "yellow";
     private borderWidth = 2;
     private edgeWidth = 3;
-    private callBack: ((result: { [key: string]: any }) => void);
 
 
     private viewport = { scale: 1, translateX: 0, translateY: 0 };
@@ -89,10 +94,15 @@ class DataPipes {
 
     addNode(config: NodeConfig): string {
         this.nodeIdx++;
-        const id = config.id || `node-${this.nodeIdx}`;
+        const id = config.id || `N-${this.nodeIdx}`;
         config.id = id
-        config.selected = config.selected || false;
-        config.active = config.active || false;
+        // defaults
+        if (!config.size) config.size = this.nodeSize 
+        if (!config.borderColor) config.borderColor = this.borderColor 
+        if (!config.bgColor) config.bgColor = this.bgColor 
+        if (!config.shape) config.shape = "circle" 
+        if (!config.label) config.label = `N-${this.nodeIdx}` 
+        config.selected = false;
         this.nodes.push(config);
         //console.log("nodes:", this.nodes);
         this.render();
@@ -101,10 +111,10 @@ class DataPipes {
 
     addEdge(config: EdgeConfig): string {
         this.edgeIdx++;
-        const id = config.id || `edge-${this.edgeIdx}`;
+        const id = config.id || `E-${this.edgeIdx}`;
         config.id = id
         config.selected = config.selected || false;
-        const label = config.label || `edge-${this.edgeIdx}`;
+        const label = config.label || `E-${this.edgeIdx}`;
         config.label = label;
         this.edges.push(config);
         //console.log("edges:", this.edges);
@@ -133,12 +143,14 @@ class DataPipes {
 
     modifyNodeStyle(id: string, newStyles: Partial<NodeConfig>): void {
         const node = this.nodes.find(node => node.id === id);
-        if (node) Object.assign(node, newStyles);
+        if (node) {
+            Object.assign(node, newStyles);
+        }
         this.render();
     }
 
-    modifyEdgeStyle(from: string, to: string, newStyles: Partial<EdgeConfig>): void {
-        const edge = this.edges.find(edge => edge.from === from && edge.to === to);
+    modifyEdgeStyle(id: string, newStyles: Partial<EdgeConfig>): void {
+        const edge = this.edges.find(edge => edge.id === id);
         if (edge) Object.assign(edge, newStyles);
         this.render();
     }
@@ -283,14 +295,14 @@ class DataPipes {
 
         // Draw nodes
         for (const node of this.nodes) {
-            this.context.fillStyle = this.selectedNode === node ? this.activeColor : this.bgColor;
+            this.context.fillStyle = this.selectedNode === node ? this.selectColor : this.bgColor;
             this.context.strokeStyle = this.borderColor;
             this.context.lineWidth = this.borderWidth;
 
             const halfSize = node.size / 2;
 
             // Draw node shape
-            const shape = node.active ? "star" : node.shape;
+            const shape = node.shape;
             if (shape === "circle") {
                 this.context.beginPath();
                 this.context.arc(
@@ -318,7 +330,7 @@ class DataPipes {
                 const img = new Image();
                 img.src = node.icon;
                 await img.decode(); // Ensure the image is fully loaded before drawing
-                const imgSize = Math.round(node.size * .8);
+                const imgSize = Math.round(node.size * .75);
                 const imgOffs = Math.ceil((node.size - imgSize) / 2);
                 this.context.drawImage(img, node.x + imgOffs, node.y + imgOffs, imgSize,imgSize);
             }
