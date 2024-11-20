@@ -14,7 +14,7 @@
 
 #### Defined in
 
-[DataPipes.ts:15](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L15)
+[DataPipes.ts:17](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L17)
 
 ***
 
@@ -24,7 +24,7 @@
 
 #### Defined in
 
-[DataPipes.ts:16](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L16)
+[DataPipes.ts:18](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L18)
 
 ***
 
@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[DataPipes.ts:14](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L14)
+[DataPipes.ts:16](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L16)
 
 ***
 
@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[DataPipes.ts:19](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L19)
+[DataPipes.ts:21](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L21)
 
 ***
 
@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[DataPipes.ts:20](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L20)
+[DataPipes.ts:22](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L22)
 
 ***
 
@@ -64,7 +64,7 @@
 
 #### Defined in
 
-[DataPipes.ts:17](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L17)
+[DataPipes.ts:19](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L19)
 
 ***
 
@@ -74,4 +74,4 @@
 
 #### Defined in
 
-[DataPipes.ts:18](https://github.com/digital-codes/dataPipes/blob/bb02752113d5d2b20ba2616866c6bee78f0dedc7/src/DataPipes.ts#L18)
+[DataPipes.ts:20](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L20)

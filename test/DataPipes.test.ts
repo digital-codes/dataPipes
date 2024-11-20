@@ -1,5 +1,6 @@
 // src/DataFrame.test.ts
 import { DataPipes } from '../src/DataPipes';
+import { describe, it, expect, vi  } from 'vitest';
 
 describe('DataPipes', () => {
 
@@ -62,7 +63,7 @@ describe('DataPipes', () => {
 
     it('should invoke the callback with the correct result', () => {
         // Create a mock callback function
-        const mockCallback = jest.fn();
+        const mockCallback = vi.fn();
 
         // Call the tested function
         const dp = new DataPipes(container, 2000, 2000,mockCallback);
@@ -76,7 +77,7 @@ describe('DataPipes', () => {
 
     it('should not invoke the callback', () => {
         // Create a mock callback function
-        const mockCallback = jest.fn();
+        const mockCallback = vi.fn();
 
         // Call the tested function
         const dp = new DataPipes(container, 2000, 2000);
@@ -91,7 +92,7 @@ describe('DataPipes', () => {
     it('should dispatch a custom event with the correct detail', () => {
 
         // Mock the event listener
-        const mockListener = jest.fn();
+        const mockListener = vi.fn();
 
         // Attach the mock listener to the element
         container.addEventListener('testEvent', mockListener);
@@ -113,7 +114,7 @@ describe('DataPipes', () => {
     it('should not dispatch a custom event', () => {
 
         // Mock the event listener
-        const mockListener = jest.fn();
+        const mockListener = vi.fn();
 
         // Attach the mock listener to the element
         container.addEventListener('testEvent', mockListener);
@@ -129,7 +130,7 @@ describe('DataPipes', () => {
     it('should dispatch a custom event upon pointer upt', () => {
 
         // Mock the event listener
-        const mockListener = jest.fn();
+        const mockListener = vi.fn();
 
         // Attach the mock listener to the element
         container.addEventListener('testEvent', mockListener);
