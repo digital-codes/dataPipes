@@ -1,5 +1,5 @@
 // src/DataFrame.test.ts
-import { DataPipes } from './DataPipes';
+import { DataPipes } from '../src/DataPipes';
 
 describe('DataPipes', () => {
 
