@@ -1,4 +1,4 @@
-[**datapipes v0.1.0**](README.md) • **Docs**
+[**datapipes v0.1.0**](README.md)
 
 ***
 

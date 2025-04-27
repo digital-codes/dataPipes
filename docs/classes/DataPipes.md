@@ -1,34 +1,42 @@
-[**datapipes v0.1.0**](../README.md) • **Docs**
+[**datapipes v0.1.0**](../README.md)
 
 ***
 
-[datapipes v0.1.0](../globals.md) / DataPipes
+[datapipes](../globals.md) / DataPipes
 
 # Class: DataPipes
 
+Defined in: [DataPipes.ts:25](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L25)
+
 ## Constructors
 
-### new DataPipes()
+### Constructor
 
-> **new DataPipes**(`container`, `width`, `height`, `callBack`): [`DataPipes`](DataPipes.md)
+> **new DataPipes**(`container`, `width`, `height`, `callBack`): `DataPipes`
+
+Defined in: [DataPipes.ts:53](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L53)
 
 #### Parameters
 
-• **container**: `HTMLElement`
+##### container
 
-• **width**: `number`
+`HTMLElement`
 
-• **height**: `number`
+##### width
 
-• **callBack**: `null` \| `string` \| (`result`) => `void` = `null`
+`number`
+
+##### height
+
+`number`
+
+##### callBack
+
+`null` | `string` | (`result`) => `void`
 
 #### Returns
 
-[`DataPipes`](DataPipes.md)
-
-#### Defined in
-
-[DataPipes.ts:53](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L53)
+`DataPipes`
 
 ## Methods
 
@@ -36,17 +44,17 @@
 
 > **addEdge**(`config`): `string`
 
+Defined in: [DataPipes.ts:112](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L112)
+
 #### Parameters
 
-• **config**: [`EdgeConfig`](../interfaces/EdgeConfig.md)
+##### config
+
+[`EdgeConfig`](../interfaces/EdgeConfig.md)
 
 #### Returns
 
 `string`
-
-#### Defined in
-
-[DataPipes.ts:112](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L112)
 
 ***
 
@@ -54,17 +62,17 @@
 
 > **addNode**(`config`): `string`
 
+Defined in: [DataPipes.ts:95](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L95)
+
 #### Parameters
 
-• **config**: [`NodeConfig`](../interfaces/NodeConfig.md)
+##### config
+
+[`NodeConfig`](../interfaces/NodeConfig.md)
 
 #### Returns
 
 `string`
-
-#### Defined in
-
-[DataPipes.ts:95](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L95)
 
 ***
 
@@ -72,13 +80,11 @@
 
 > **center**(): `void`
 
+Defined in: [DataPipes.ts:191](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L191)
+
 #### Returns
 
 `void`
-
-#### Defined in
-
-[DataPipes.ts:191](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L191)
 
 ***
 
@@ -86,13 +92,11 @@
 
 > **getEdges**(): [`EdgeConfig`](../interfaces/EdgeConfig.md)[]
 
+Defined in: [DataPipes.ts:139](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L139)
+
 #### Returns
 
 [`EdgeConfig`](../interfaces/EdgeConfig.md)[]
-
-#### Defined in
-
-[DataPipes.ts:139](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L139)
 
 ***
 
@@ -100,13 +104,11 @@
 
 > **getNodes**(): [`NodeConfig`](../interfaces/NodeConfig.md)[]
 
+Defined in: [DataPipes.ts:136](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L136)
+
 #### Returns
 
 [`NodeConfig`](../interfaces/NodeConfig.md)[]
-
-#### Defined in
-
-[DataPipes.ts:136](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L136)
 
 ***
 
@@ -114,13 +116,11 @@
 
 > **getWrapper**(): `HTMLElement`
 
+Defined in: [DataPipes.ts:91](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L91)
+
 #### Returns
 
 `HTMLElement`
-
-#### Defined in
-
-[DataPipes.ts:91](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L91)
 
 ***
 
@@ -128,19 +128,21 @@
 
 > **modifyEdgeStyle**(`id`, `newStyles`): `void`
 
+Defined in: [DataPipes.ts:152](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L152)
+
 #### Parameters
 
-• **id**: `string`
+##### id
 
-• **newStyles**: `Partial`\<[`EdgeConfig`](../interfaces/EdgeConfig.md)\>
+`string`
+
+##### newStyles
+
+`Partial`\<[`EdgeConfig`](../interfaces/EdgeConfig.md)\>
 
 #### Returns
 
 `void`
-
-#### Defined in
-
-[DataPipes.ts:152](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L152)
 
 ***
 
@@ -148,19 +150,21 @@
 
 > **modifyNodeStyle**(`id`, `newStyles`): `void`
 
+Defined in: [DataPipes.ts:144](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L144)
+
 #### Parameters
 
-• **id**: `string`
+##### id
 
-• **newStyles**: `Partial`\<[`NodeConfig`](../interfaces/NodeConfig.md)\>
+`string`
+
+##### newStyles
+
+`Partial`\<[`NodeConfig`](../interfaces/NodeConfig.md)\>
 
 #### Returns
 
 `void`
-
-#### Defined in
-
-[DataPipes.ts:144](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L144)
 
 ***
 
@@ -168,19 +172,21 @@
 
 > **pan**(`dx`, `dy`): `void`
 
+Defined in: [DataPipes.ts:171](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L171)
+
 #### Parameters
 
-• **dx**: `number`
+##### dx
 
-• **dy**: `number`
+`number`
+
+##### dy
+
+`number`
 
 #### Returns
 
 `void`
-
-#### Defined in
-
-[DataPipes.ts:171](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L171)
 
 ***
 
@@ -188,19 +194,21 @@
 
 > **removeEdge**(`from`, `to`): `void`
 
+Defined in: [DataPipes.ts:131](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L131)
+
 #### Parameters
 
-• **from**: `string`
+##### from
 
-• **to**: `string`
+`string`
+
+##### to
+
+`string`
 
 #### Returns
 
 `void`
-
-#### Defined in
-
-[DataPipes.ts:131](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L131)
 
 ***
 
@@ -208,17 +216,17 @@
 
 > **removeNode**(`id`): `void`
 
+Defined in: [DataPipes.ts:125](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L125)
+
 #### Parameters
 
-• **id**: `string`
+##### id
+
+`string`
 
 #### Returns
 
 `void`
-
-#### Defined in
-
-[DataPipes.ts:125](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L125)
 
 ***
 
@@ -226,13 +234,11 @@
 
 > **resetView**(): `void`
 
+Defined in: [DataPipes.ts:177](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L177)
+
 #### Returns
 
 `void`
-
-#### Defined in
-
-[DataPipes.ts:177](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L177)
 
 ***
 
@@ -240,13 +246,11 @@
 
 > **zoomin**(): `void`
 
+Defined in: [DataPipes.ts:159](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L159)
+
 #### Returns
 
 `void`
-
-#### Defined in
-
-[DataPipes.ts:159](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L159)
 
 ***
 
@@ -254,10 +258,8 @@
 
 > **zoomout**(): `void`
 
+Defined in: [DataPipes.ts:165](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L165)
+
 #### Returns
 
 `void`
-
-#### Defined in
-
-[DataPipes.ts:165](https://github.com/digital-codes/dataPipes/blob/0cd7d4b058b5dfdc33d6734fe3c6ebb13dd3d0f5/src/DataPipes.ts#L165)

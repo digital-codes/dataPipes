@@ -1,4 +1,4 @@
-**datapipes v0.1.0** • [**Docs**](globals.md)
+**datapipes v0.1.0**
 
 ***
 
