@@ -5,6 +5,7 @@
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "types": ["@vitest/browser/providers/webdriverio"],
     /**/
     /*
     "target": "ES6",                       // Specify ECMAScript target version

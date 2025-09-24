@@ -10,7 +10,14 @@ export default defineConfig({
     browser: {
       provider: "webdriverio", //'playwright', // or 'webdriverio'
       enabled: true,
-      name: 'firefox', // browser name is required
+      instances: [
+        {
+          browser: 'chrome',
+          capabilities: {
+          },
+        },
+      ],
+
     },
   },
 });
