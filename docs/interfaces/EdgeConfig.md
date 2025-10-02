@@ -6,7 +6,7 @@
 
 # Interface: EdgeConfig
 
-Defined in: [DataPipes.ts:15](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L15)
+Defined in: [DataPipes.ts:15](https://github.com/digital-codes/dataPipes/blob/1d7f6836cd0cf4a3a11ee416391b12745abaec7a/src/DataPipes.ts#L15)
 
 ## Properties
 
@@ -14,7 +14,7 @@ Defined in: [DataPipes.ts:15](https://github.com/digital-codes/dataPipes/blob/64
 
 > **from**: `string`
 
-Defined in: [DataPipes.ts:17](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L17)
+Defined in: [DataPipes.ts:17](https://github.com/digital-codes/dataPipes/blob/1d7f6836cd0cf4a3a11ee416391b12745abaec7a/src/DataPipes.ts#L17)
 
 ***
 
@@ -22,7 +22,7 @@ Defined in: [DataPipes.ts:17](https://github.com/digital-codes/dataPipes/blob/64
 
 > `optional` **fromType**: `string`
 
-Defined in: [DataPipes.ts:18](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L18)
+Defined in: [DataPipes.ts:18](https://github.com/digital-codes/dataPipes/blob/1d7f6836cd0cf4a3a11ee416391b12745abaec7a/src/DataPipes.ts#L18)
 
 ***
 
@@ -30,7 +30,7 @@ Defined in: [DataPipes.ts:18](https://github.com/digital-codes/dataPipes/blob/64
 
 > `optional` **id**: `string`
 
-Defined in: [DataPipes.ts:16](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L16)
+Defined in: [DataPipes.ts:16](https://github.com/digital-codes/dataPipes/blob/1d7f6836cd0cf4a3a11ee416391b12745abaec7a/src/DataPipes.ts#L16)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [DataPipes.ts:16](https://github.com/digital-codes/dataPipes/blob/64
 
 > `optional` **label**: `string`
 
-Defined in: [DataPipes.ts:21](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L21)
+Defined in: [DataPipes.ts:21](https://github.com/digital-codes/dataPipes/blob/1d7f6836cd0cf4a3a11ee416391b12745abaec7a/src/DataPipes.ts#L21)
 
 ***
 
@@ -46,7 +46,7 @@ Defined in: [DataPipes.ts:21](https://github.com/digital-codes/dataPipes/blob/64
 
 > `optional` **selected**: `boolean`
 
-Defined in: [DataPipes.ts:22](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L22)
+Defined in: [DataPipes.ts:22](https://github.com/digital-codes/dataPipes/blob/1d7f6836cd0cf4a3a11ee416391b12745abaec7a/src/DataPipes.ts#L22)
 
 ***
 
@@ -54,7 +54,7 @@ Defined in: [DataPipes.ts:22](https://github.com/digital-codes/dataPipes/blob/64
 
 > **to**: `string`
 
-Defined in: [DataPipes.ts:19](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L19)
+Defined in: [DataPipes.ts:19](https://github.com/digital-codes/dataPipes/blob/1d7f6836cd0cf4a3a11ee416391b12745abaec7a/src/DataPipes.ts#L19)
 
 ***
 
@@ -62,4 +62,4 @@ Defined in: [DataPipes.ts:19](https://github.com/digital-codes/dataPipes/blob/64
 
 > `optional` **toType**: `string`
 
-Defined in: [DataPipes.ts:20](https://github.com/digital-codes/dataPipes/blob/6413013aaa80dbf1b178557f3f040902a75fd0e8/src/DataPipes.ts#L20)
+Defined in: [DataPipes.ts:20](https://github.com/digital-codes/dataPipes/blob/1d7f6836cd0cf4a3a11ee416391b12745abaec7a/src/DataPipes.ts#L20)
