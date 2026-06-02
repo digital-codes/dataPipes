@@ -21,11 +21,11 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "@vitest/browser": "^3.2.4",
+    "@vitest/browser": "^4.1.8",
     "typedoc": "^0.28.13",
     "typedoc-plugin-markdown": "^4.9.0",
     "typescript": "^5.9.3",
-    "vitest": "^3.2.4",
+    "vitest": "^4.1.8",
     "webdriverio": "^9.20.0"
   }
 }
