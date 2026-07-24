@@ -21,7 +21,7 @@
     "prepare": "npm run build"
   },
   "devDependencies": {
-    "@vitest/browser": "^4.1.8",
+    "@vitest/browser": "^4.1.10",
     "typedoc": "^0.28.13",
     "typedoc-plugin-markdown": "^4.9.0",
     "typescript": "^5.9.3",
