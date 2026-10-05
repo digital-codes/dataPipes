@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitest/config';
-
+import { webdriverio } from '@vitest/browser-webdriverio'
 export default defineConfig({
   test: {
     globals: true,         // Enable global test methods like describe, it
@@ -8,16 +8,13 @@ export default defineConfig({
       reporter: ['text', 'html'],
     },
     browser: {
-      provider: "webdriverio", //'playwright', // or 'webdriverio'
       enabled: true,
+      provider: webdriverio(), // https://vitest.dev/config/browser/provider
       instances: [
         {
-          browser: 'chrome',
-          capabilities: {
-          },
+          browser: 'firefox',  // was chrome before
         },
       ],
-
     },
   },
 });
